@@ -19,6 +19,7 @@ pkg install proot-distro
 ```
 
 <details>
+<summary><strong>Arch</strong></summary>
 #### Arch
 ```bash
 pkg update && pkg install proot-distro -y
