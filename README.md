@@ -1,12 +1,20 @@
 # i3 Window Manager (Dotfiles)
-### 💻 Info
-This dotfiles repository is primarily designed for use with Termux on Android, leveraging Proot-Distro to manage Linux environments. It includes lightweight, optimized configurations tailored for mobile usage, enabling a smooth desktop-like experience within Termux using window managers like i3 or Openbox via Termux X11.
+### 💻 Requirements
+- [Termux](https://f-droid.org/packages/com.termux/)
+- [Termux X11](https://github.com/termux/termux-x11)
+- []
 
 ### 🖼️ Screenshots
 ![01](/screenshot/01.png)
 ![02](/screenshot/02.png)
 
 ### 📦 Basic Installation Guide
+
+Install *proot-distro*
+```bash
+pkg install proot-distro
+```
+
 #### Arch
 ```bash
 pkg update && pkg install proot-distro -y
