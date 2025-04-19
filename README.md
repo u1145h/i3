@@ -6,9 +6,11 @@
 ### 🖼️ Screenshots
 ![01](/screenshot/01.png)
 ![02](/screenshot/02.png)
+![03](/screenshot/03.png)
+![04](/screenshot/04.png)
+![04](/screenshot/05.png)
 
 ### 📦 Basic Installation Guide
-
 Install *proot-distro*
 ```
 pkg install proot-distro
@@ -40,7 +42,7 @@ exit
 ```
 exit
 ```
-Termux Script to launch i3 WM in Within Termux X11
+###### Termux Script to launch i3 WM in Within Termux X11
 ```
 nano arch-i3.sh
 ```
@@ -69,6 +71,11 @@ proot-distro login archlinux --shared-tmp -- /bin/bash -c 'export PULSE_SERVER=1
 
 exit 0
 ```
+
+###### Termux Script to launch i3 WM in Within VNC Viewer
+- [Start Script](termux/start-vnc-user.sh)
+- [Stop Script](termux/stop-vnc-user.sh)
+
 ##### Autostart Apps in i3
 edit */home/username/.config/i3/config* and add:
 ```
