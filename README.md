@@ -2,6 +2,7 @@
 ### 💻 Requirements
 - [Termux](https://f-droid.org/packages/com.termux/)
 - [Termux X11](https://github.com/termux/termux-x11)
+- [VNC](https://f-droid.org/packages/com.gaurav.avnc/)
 
 ### 🖼️ Screenshots
 ![01](/screenshot/01.png)
