@@ -1,6 +1,9 @@
 # Main
 set $mod Mod1
 
+exec_always --no-startup-id wal -n -l --theme ~/.config/wal/colors-mytheme.json
+exec --no-startup-id ~/.config/scripts/tablet-display-fix.sh
+exec --no-startup-id ~/.config/scripts/wallpaper.sh
 
 # █▀▄ █▀▀ █▀▀ █▀█ █▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
 # █▄▀ ██▄ █▄▄ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
@@ -10,20 +13,23 @@ gaps outer 3
 font pango:JetBrainsMono Nerd 10
 
 client.focused          #2B2D2D #2B2D2D #A9B665 #A9B665 #A9B665
-client.unfocused        #111314 #111314 #161819 #161819 #161819
+client.unfocused        #f7f3fa #f7f3fa #f7f3fa #f7f3fa #f7f3fa
 client.focused_inactive #1F2121 #1F2121 #161819 #161819 #161819
 client.urgent           #E78A4E #E78A4E #ffffff #ffffff #ffffff
 
 # Hide Titlebar
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
-exec --no-startup-id feh --bg-scale ~/.config/wallpaper/wallpaper.png
+for_window [class=".*"] border pixel 2
 
 # Start Up
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+
+#exec --no-startup-id nm-applet
+#exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -31,6 +37,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -41,12 +48,13 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $moD+e exec thunar
 
 # kill focused window
 bindsym $mod+q kill
 
 # start Rofi
-bindsym $mod+t exec "rofi -modi drun -show drun"
+bindsym $mod+space exec "rofi -modi drun -show drun"
 
 # change focus
 bindsym $mod+j focus left
@@ -82,15 +90,15 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+t focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -184,9 +192,13 @@ bar {
         statusline         #f0e9da
         separator          #2B2D2D
 
-        focused_workspace  #161819 #A9B665 #f0e9da   # bg border text (main accent)
+        focused_workspace  #161819 #A9B665 #A9B665   # bg border text (main accent)
         inactive_workspace #111314 #2B2D2D #f7f3ea36
         urgent_workspace   #111314 #EA6962 #EA6962
         binding_mode       #111314 #D3869B #f0e9da
     }
 }
+
+
+# Wallpaper
+#exec --no-startup-id feh --bg-scale ~/.config/wallpaper/wallpaper.png
