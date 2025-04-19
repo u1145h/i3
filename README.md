@@ -76,9 +76,10 @@ exit 0
 - [Start Script](termux/start-vnc-user.sh)
 - [Stop Script](termux/stop-vnc-user.sh)
 
-##### Autostart Apps in i3
-edit */home/username/.config/i3/config* and add:
+### 📦 Packages
+```bash
+sudo pacman -S imv zathura zathura-pdf-poppler htop neofetch ranger gvfs-mtp mtpfs feh kitty noto-fonts-emoji bottom xss-lock dex network-manager-applet tigervnc base-devel
 ```
-exec --no-startup-id pulseaudio --start
-exec --no-startup-id xterm
+```bash
+yay -S jmtpfs qutebrowser nwg-look visual-studio-code-bin xorg-xauth
 ```
