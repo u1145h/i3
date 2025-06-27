@@ -40,6 +40,12 @@ su - *username*
 echo "exec i3" > ~/.xinitrc
 exit
 ```
+
+Edit `visudo`
+```
+EDITOR=nvim visudo
+```
+
 ```
 exit
 ```
@@ -79,8 +85,14 @@ exit 0
 
 ### 📦 Packages
 ```bash
-sudo pacman -S imv zathura zathura-pdf-poppler htop neofetch ranger gvfs-mtp mtpfs feh kitty noto-fonts-emoji bottom xss-lock dex network-manager-applet tigervnc base-devel
+sudo pacman -S git imv zathura zathura-pdf-poppler htop ranger gvfs-mtp mtpfs feh kitty noto-fonts-emoji bottom xss-lock dex network-manager-applet tigervnc base-devel
 ```
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
 ```bash
 yay -S jmtpfs qutebrowser nwg-look visual-studio-code-bin xorg-xauth
 ```
